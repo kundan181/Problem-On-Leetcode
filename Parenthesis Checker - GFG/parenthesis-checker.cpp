@@ -10,42 +10,29 @@ class Solution
 {
     public:
     //Function to check if brackets are balanced or not.
-    bool ispar(string x)
+    bool ispar(string s)
     {
         // Your code here
-       stack<char> s;
-       for(char& c: x)
+       stack<char>st;
+       for(int i=0;i<s.size();i++)
        {
-           switch(c){
-               case '(':
-               case '{':
-               case '[': s.push(c);
-               break;
-               case ')':
-               if(s.empty() || s.top()!='(')
-               return false;
-               else
-               s.pop();
-               break;
-                case '}':
-               if(s.empty() || s.top()!='{')
-               return false;
-               else
-               s.pop();
-               break;
-                case ']':
-               if(s.empty() || s.top()!='[')
-               return false;
-               else
-               s.pop();
-               break;
+           if(s[i]=='(' or s[i]=='[' or s[i]=='{')
+           st.push(s[i]);
+           else {
+               if(st.empty()) return 0;
                
+                   char c=st.top();
+                   if((c=='(' and s[i]==')') or (c=='[' and s[i]==']') or 
+                   (c=='{' and s[i]=='}'))
+                   st.pop();
+                   else return 0;
+               }
            }
-       }
-       return s.empty();
-    }
-
-};
+       
+       return st.empty(); 
+                
+           } 
+       };
 
 // { Driver Code Starts.
 
