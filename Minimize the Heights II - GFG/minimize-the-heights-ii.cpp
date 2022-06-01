@@ -9,33 +9,23 @@ using namespace std;
 
 class Solution {
   public:
-     int getMinDiff(int arr[], int n, int k) {
-     
-       int maxv,minv,diff,i;
+     int getMinDiff(int arr[], int n, int k) 
+     {
+      sort(arr,arr+n); //short the array
+      //as per question say
+      int ans=arr[n-1]-arr[0];
+      int smallest=arr[0]+k;
+      int largest=arr[n-1]-k;
+      int mi, ma;
+      for(int i=0;i<n-1;i++){
+      mi=min(smallest,arr[i+1]-k);
+      ma=max(largest,arr[i]+k);
+      if(mi<0) continue;
+      ans=min(ans, ma-mi);
+      }
       
-      sort(arr,arr+n);
-      
-      maxv=arr[n-1];
-      minv=arr[0];
-      
-      diff=maxv-minv;
-      
-      
-      for(i=1;i<n;i++){
-          
-         if(arr[i]-k<0){
-              continue;
-          }
-          
-          minv=min(arr[0]+k,arr[i]-k);
-          maxv=max(arr[n-1]-k,arr[i-1]+k);
-          
-          
-          diff=min(diff,maxv-minv);
-      }  
-     
-      return diff;
-   }
+      return ans;
+     }
 
    
 };
