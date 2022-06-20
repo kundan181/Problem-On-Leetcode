@@ -1,15 +1,19 @@
-
-class Solution 
-{
-    public :
-        int maxProfit(vector<int>& prices)
-        {
-            int mini = INT_MAX, ans = 0, n = prices.size();
-            for(auto x : prices)
-            {
-                ans = max(ans, x-mini);
-                mini = min(mini, x);
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int lsf = INT_MAX;
+        int op = 0;
+        int pist = 0;
+        
+        for(int i = 0; i < prices.size(); i++){
+            if(prices[i] < lsf){
+                lsf = prices[i];
             }
-            return ans;
+            pist = prices[i] - lsf;
+            if(op < pist){
+                op = pist;
+            }
         }
+        return op;
+    }
 };
