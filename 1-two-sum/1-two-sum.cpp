@@ -1,16 +1,23 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> ans;
-        unordered_map<int, int> mp;
-        for(int i=0;i<nums.size();i++){
-            if(mp.find(target-nums[i])!=mp.end()){
-                ans.push_back(i);
-                ans.push_back(mp[target-nums[i]]);
-                return ans;
+    vector<int> twoSum(vector<int>& nums, int target=9) {
+     
+        vector<int> v;
+        int n = nums.size();
+        
+        for(int i=0; i<n; i++)
+        {
+            for(int j=i+1; j<n; j++)
+            {
+                if(nums[i] + nums[j] == target)
+                {
+                    v.push_back(i);
+                    v.push_back(j);
+                    break;
+                }
             }
-            mp[nums[i]]=i; // number is added in map later to avoid same index twice in ans
         }
-        return ans;
+        return v;
     }
 };
+
