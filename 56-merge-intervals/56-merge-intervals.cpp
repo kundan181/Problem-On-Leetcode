@@ -1,33 +1,21 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        sort(intervals.begin(),intervals.end());
-        int n = intervals.size();
-        vector<vector<int>> ans;
-        
-        for(int i=0; i<n; i++)
-        {
-            if(ans.empty())
-            {
-                ans.push_back(intervals[i]);
-            }
-            else 
-            {
-                vector<int>&v = ans.back();
-                int y = v[1]; //end time of previous i
-                //compare 'y' with i start time
-                //overlapping case
-                if(intervals[i][0]<=y)
-                {
-                    v[1] = max(y,intervals[i][1]);
-                }
-                //not overlapping 
-                else
-                {
-                    ans.push_back(intervals[i]);
-                }
-            }
-        }   
-        return ans;
+        //base case
+        if(intervals.size()<=1) return intervals;
+        //resultan vector
+        vector<vector<int>> result;
+        //sort takes O(nlogn) time
+        sort(intervals.begin(), intervals.end()); 
+        //insert the the the first interval in the result
+        result.push_back(intervals[0]);
+         //Traverse the whole vector .Takes O(n) time
+        for(int i=1; i<intervals.size(); i++) {
+             //if intevals are overlapping
+            if(result.back()[1] >= intervals[i][0]) result.back()[1] = max(result.back()[1] , intervals[i][1]);
+            //else they are not overlapping
+            else result.push_back(intervals[i]); 
+        }
+        return result;
     }
 };
