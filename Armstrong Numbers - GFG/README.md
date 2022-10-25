@@ -1,7 +1,6 @@
 # Armstrong Numbers
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">For a given<strong> 3 </strong>digit number, find whether it is armstrong number or not.&nbsp;An&nbsp;<strong>Armstrong number</strong>&nbsp;of three digits is an integer such that the sum of the cubes of its digits is equal to the&nbsp;<strong>number</strong>&nbsp;itself. Return&nbsp;"<strong>Yes</strong>" if it is a armstrong&nbsp;number&nbsp;else return&nbsp;"<strong>No</strong>".</span><br>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">For a given<strong> 3 </strong>digit number, find whether it is armstrong number or not.&nbsp;An&nbsp;<strong>Armstrong number</strong>&nbsp;of three digits is an integer such that the sum of the cubes of its digits is equal to the&nbsp;<strong>number</strong>&nbsp;itself. Return&nbsp;"<strong>Yes</strong>" if it is a armstrong&nbsp;number&nbsp;else return&nbsp;"<strong>No</strong>".</span><br>
 <span style="font-size:18px"><strong>NOTE:&nbsp;</strong>371 is an&nbsp;<strong>Armstrong number</strong>&nbsp;since 3<sup>3</sup> + 7<sup>3 </sup>+ 1<sup>3</sup> = 371<br>
 <br>
 <strong>Example 1:</strong></span></p>
@@ -30,5 +29,4 @@ You dont need to read input or print anything. Complete the function <strong>arm
 <br>
 <strong>Constraints:</strong><br>
 100 ≤ n&nbsp;&lt;1000</span></p>
- <p></p>
-            </div>
+</div>
