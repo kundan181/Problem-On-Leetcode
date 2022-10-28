@@ -1,9 +1,9 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 class Solution{
 public:	
@@ -11,29 +11,33 @@ public:
 	// largest elements
 	int print2largest(int arr[], int n) {
 	    // code here
-	    int ma1 = arr[0], ma2 = -1;
+	    //finding the first maximum element
+	    int ma1 = arr[0];
 	    for(int i=1; i<n; i++)
-	    {
-	        if(ma1<arr[i])
-	        {
-	            ma1 = arr[i];
-	        }
-	    }
-	    
-	    for(int i=0; i<n; i++)
-	    {
-	        if(ma1 == arr[i])
-	            continue;
-	        if(ma2 < arr[i])
-	        {
-	            ma2 = arr[i];
-	        }
-	    }
-	    return ma2;
+    	{
+    	   if(ma1 < arr[i])
+    	   {
+    	       ma1 = arr[i];
+    	   }
+    	}
+    	
+    	//finding the second largest element
+    	int max2 = -1;
+    	for(int i=0; i<n; i++)
+    	{
+    	    if(ma1 == arr[i])
+    	        continue;
+    	    if(max2 < arr[i])
+    	    {
+    	        max2 = arr[i];
+    	    }
+    	}
+    	return max2;
+    	
 	}
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main() {
     int t;
@@ -51,4 +55,5 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
