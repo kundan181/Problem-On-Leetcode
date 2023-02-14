@@ -13,16 +13,12 @@ public:
     ListNode* reverseKGroup(ListNode* head, int k) {
         
         
-        ListNode* cursor = head;
+        ListNode* temp = head;
         for(int i = 0; i < k; i++){
-            if(cursor == nullptr) return head;
-            cursor = cursor->next;
+            if(temp == NULL) return head;
+            temp = temp->next;
         }
-        //base case
-        if(head == NULL)
-        {
-            return NULL;
-        }
+        
         
         //step1 revserse k nodes
         ListNode* next = NULL;
