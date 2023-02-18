@@ -55,7 +55,7 @@ class Solution
         unordered_map<Node*, Node*> oldToNewNode;
         Node* originalNode = head;
         Node* cloneNode = cloneHead;
-        while(originalNode != NULL && cloneNode != NULL)
+        while(originalNode != NULL)
         {
             oldToNewNode[originalNode] = cloneNode;
             originalNode = originalNode->next;
