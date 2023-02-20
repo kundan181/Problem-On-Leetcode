@@ -9,14 +9,39 @@ using namespace std;
 
 class Solution
 {
+   private:
+   int maxElem(int A[], int N)
+   {
+       	int maxi =INT_MIN;
+    	for(int i=0; i<N; i++)
+    	{
+    	    if(A[i] > maxi){
+    	        maxi = A[i];
+    	    }
+    	}
+       return maxi;
+   }
+   private:
+   int minElem(int A[], int N)
+   {
+       	int min =INT_MAX;
+    	for(int i=0; i<N; i++)
+    	{
+    	    if(A[i] < min){
+    	        min = A[i];
+    	    }
+    	}
+       return min;
+   }
    public:
-    int findSum(int arr[], int n)
+    int findSum(int A[], int N)
     {
     	//code here.
-    	int ma = *max_element(arr, arr + n);
-    	int mi = *min_element(arr, arr + n);
-    	return ma+mi;
-
+        int ma = maxElem(A,N);
+        int mi = minElem(A,N);
+        
+        int sum = ma + mi;
+        return sum;
     }
 
 };
