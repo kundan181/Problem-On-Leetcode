@@ -137,7 +137,7 @@ class Solution{
         pair<int,int> left = isBalancedfast(root->left); //height ahe hya madhe
         pair<int,int> right = isBalancedfast(root->right);
         
-        bool leftAns = left.first;
+        bool leftAns = left.first; //hya madhe true or false store ahe jya tree madhun alya ahe
         bool rightAns = right.first;
         bool diff = abs(left.second - right.second) <= 1; // apan left.second ne height access karu shkato
         pair<bool,int> ans; //hya madhe start la true ani false second la height
