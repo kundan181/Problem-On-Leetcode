@@ -113,15 +113,19 @@ class Solution
         pair<bool,int> leftAns = isSumTreeFast(root->left);
         pair<bool,int> rightAns = isSumTreeFast(root->right);
         
-        bool left = leftAns.first;
-        bool right = rightAns.first;
-        bool condn = root->data == leftAns.second+rightAns.second;
+        bool isleftSumTree = leftAns.first;
+        bool isrightSumTree = rightAns.first;
+        
+        int leftSum = leftAns.second;
+        int rightSum = rightAns.second;
+        
+        bool condn = root->data == leftSum + rightSum;
         
         pair<bool,int> ans;
-        if(left && right && condn)
+        if(isleftSumTree && isrightSumTree && condn)
         {
             ans.first = true;
-            ans.second = 2*root->data; 
+            ans.second = root->data + leftSum + rightSum; 
         }
         else
         {
